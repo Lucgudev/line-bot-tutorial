@@ -28,7 +28,8 @@ command = {
     "movie": "ok",
     "technews": "ok",
     "panx": "ok",
-    "ngobrol":"ok"
+    "ngobrol":"ok",
+    "berita":"ok"
 }
 
 
@@ -73,6 +74,12 @@ def eynyMovie():
             link = 'http://www.eyny.com/' + titleURL['href']
             data = title + '\n' + link + '\n\n'
             content += data
+    return content
+
+
+def beritaTerbaru():
+    r = requests.get('https://newsapi.org/v1/articles?source=bbc-sport&sortBy=top&apiKey=e384243bf14a4308834485b999a2d06d')
+    content = r.json()
     return content
 
 
@@ -255,7 +262,8 @@ def handle_message(event):
      "ptthot" : ptt 近期熱門的文章。
      "movie" :  近期上映的電影 ( 開眼電影網 )。
      "technews" : 科技新聞。
-     "ngobrol" : Buat loe yang jomblo!
+     "ngobrol" : Buat loe yang jomblo!,
+     "berita" : buat liat berita terbaru,
      "panx" : 科技新聞 ( 泛科技 ) 。
     '''
     content = reply_command
@@ -275,6 +283,8 @@ def handle_message(event):
         content = panx()
     if event.message.text == "ngobrol":
         content = ngobrol()
+    if event.message.text == "berita":
+        content = beritaTerbaru()
     # print("event.reply_token:",event.reply_token)
     # print("event.message.text:", event.message.text)
     line_bot_api.reply_message(
