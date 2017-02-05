@@ -39,7 +39,7 @@ def callback():
     signature = request.headers['X-Line-Signature']
 
     # get request body as text
-    body = request.get_data(as_text=False)
+    body = request.get_data(as_text=True)
     # print("body:",body)
     app.logger.info("Request body: " + body)
 
