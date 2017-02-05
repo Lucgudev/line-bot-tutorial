@@ -1,4 +1,4 @@
-import requests
+import requests, json
 import re
 from bs4 import BeautifulSoup
 from collections import defaultdict
@@ -84,9 +84,9 @@ def beritaTerbaru():
     print('1')
     res = rs.get(targetURL)
     print('2')
-    temp = res.content
+    #temp = res.content
     print('3')
-    content = temp
+    content = json.loads(res.content)
     print('4')
     return content
 
