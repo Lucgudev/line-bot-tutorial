@@ -27,7 +27,8 @@ command = {
     "ptthot": "ok",
     "movie": "ok",
     "technews": "ok",
-    "panx": "ok"
+    "panx": "ok",
+    "ngobrol":"ok"
 }
 
 
@@ -187,6 +188,10 @@ def pttHot():
     return content
 
 
+def ngobrol():
+    content = "Coklat si anjing coklat"
+    return content
+
 def movie():
     targetURL = 'http://www.atmovies.com.tw/movie/next/0/'
     print('Start parsing movie ...')
@@ -243,13 +248,14 @@ def default_factory():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     # cmd = defaultdict(default_factory, command)
-    reply_command = ''' 阿肥我目前可以提供你下列的服務，請對我輸入
+    reply_command = ''' Woy ngapain coba-coba gue. Nih aturannya
      "eyny" : eyny 電影版 Mega 連結的網址。
      "news" : apple news 即時新聞。
      "beauty" : ptt 表特版 近期大於 10 推的文章 。
      "ptthot" : ptt 近期熱門的文章。
      "movie" :  近期上映的電影 ( 開眼電影網 )。
      "technews" : 科技新聞。
+     "ngobrol" : Buat loe yang jomblo!
      "panx" : 科技新聞 ( 泛科技 ) 。
     '''
     content = reply_command
@@ -267,6 +273,8 @@ def handle_message(event):
         content = technews()
     if event.message.text == "panx":
         content = panx()
+    if event.message.text == "ngobrol":
+        content = ngobrol()
     # print("event.reply_token:",event.reply_token)
     # print("event.message.text:", event.message.text)
     line_bot_api.reply_message(
