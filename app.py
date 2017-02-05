@@ -15,8 +15,8 @@ from linebot.models import (
 )
 
 app = Flask(__name__)
-line_bot_api = LineBotApi('YOUR_CHANNEL_ACCESS_TOKEN')
-handler = WebhookHandler('YOUR_CHANNEL_SECRET')
+line_bot_api = LineBotApi('e8dd62d53e807b4d4a91519e3667d2ae')
+handler = WebhookHandler('LY0u17AEiKkEyjdXniQDPyqWVgiE5eeS8BQgIM40CfHjC3PUJD+X68f1d33YOHjjFdzA2IIxFNb6/3KYxOh4dYXtEqX/wFOtrjbKOjteLnViC+66hfz/tHB8k3teAV6COCzXzJo4yGrpm1zNTGXiWgdB04t89/1O/w1cDnyilFU=')
 
 command = {
     "eyny": "ok",
