@@ -159,13 +159,13 @@ line bot 的 大頭貼 以及 名稱 設定
 貼到下方的程式碼
 
 ```
-line_bot_api = LineBotApi('YOUR_CHANNEL_ACCESS_TOKEN')
-handler = WebhookHandler('YOUR_CHANNEL_SECRET')
-``` 
+line_bot_api = LineBotApi('LY0u17AEiKkEyjdXniQDPyqWVgiE5eeS8BQgIM40CfHjC3PUJD+X68f1d33YOHjjFdzA2IIxFNb6/3KYxOh4dYXtEqX/wFOtrjbKOjteLnViC+66hfz/tHB8k3teAV6COCzXzJo4yGrpm1zNTGXiWgdB04t89/1O/w1cDnyilFU=')
+handler = WebhookHandler('e8dd62d53e807b4d4a91519e3667d2ae')
+```
 
 更多資訊可參考 [line-bot-sdk-python](https://github.com/line/line-bot-sdk-python)
 
-接下來因為 Line Bot 需要 SSL憑證 ( https )，所以我直接使用 [Heroku](https://dashboard.heroku.com/) 
+接下來因為 Line Bot 需要 SSL憑證 ( https )，所以我直接使用 [Heroku](https://dashboard.heroku.com/)
 
 如果不知道什麼是 [Heroku](https://dashboard.heroku.com/)  以及它的使用方法
 
@@ -181,13 +181,13 @@ handler = WebhookHandler('YOUR_CHANNEL_SECRET')
 
 ```
 https://{你的網址}/callback
-``` 
+```
 
 舉例，我的網址就是
 
 ```
 https://python-ine-bot.herokuapp.com/callback
-``` 
+```
 
 ![alt tag](http://i.imgur.com/5ckn24T.jpg)
 
@@ -209,8 +209,8 @@ https://python-ine-bot.herokuapp.com/callback
 ## 執行環境
 * Python 3.4.3
 
-## Reference 
-* [line messaging-api](https://devdocs.line.me/en/#messaging-api) 
+## Reference
+* [line messaging-api](https://devdocs.line.me/en/#messaging-api)
 * [line-bot-sdk-python](https://github.com/line/line-bot-sdk-python)
 
 
