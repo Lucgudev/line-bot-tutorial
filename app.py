@@ -78,7 +78,7 @@ def eynyMovie():
 
 
 def beritaTerbaru():
-    targetURL = 'https://newsapi.org/v1/articles?source=bbc-sport&sortBy=top&apiKey=e384243bf14a4308834485b999a2d06d'
+    targetURL = 'http://ugm.ac.id/berita/'
     print('Start parsing eynyMovie....')
     rs = requests.session()
     res = rs.get(targetURL, verify=False)
