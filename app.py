@@ -79,10 +79,14 @@ def eynyMovie():
 
 def beritaTerbaru():
     targetURL = 'http://ugm.ac.id/berita/'
-    print('Start parsing eynyMovie....')
-    rs = requests.session()
-    res = rs.get(targetURL, verify=False)
-    content = res.json()
+    print('Start parsing News...')
+    # rs = requests.session()
+    # res = rs.get(targetURL, verify=False)
+    # content = res.json()
+    r = requests.get(targetURL)
+    print('1')
+    content = r.json()
+    print('2')
     return content
 
 
