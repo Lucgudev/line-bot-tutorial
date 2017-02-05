@@ -82,7 +82,7 @@ def beritaTerbaru():
     print('Start parsing eynyMovie....')
     rs = requests.session()
     res = rs.get(targetURL, verify=False)
-    content = rs.content
+    content = res.content
     return content
 
 
