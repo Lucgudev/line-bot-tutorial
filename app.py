@@ -78,8 +78,11 @@ def eynyMovie():
 
 
 def beritaTerbaru():
-    r = requests.get('https://newsapi.org/v1/articles?source=bbc-sport&sortBy=top&apiKey=e384243bf14a4308834485b999a2d06d')
-    content = r.json()
+    targetURL = 'https://newsapi.org/v1/articles?source=bbc-sport&sortBy=top&apiKey=e384243bf14a4308834485b999a2d06d'
+    print('Start parsing eynyMovie....')
+    rs = requests.session()
+    res = rs.get(targetURL, verify=False)
+    content = rs.content
     return content
 
 
