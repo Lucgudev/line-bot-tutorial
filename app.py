@@ -86,7 +86,7 @@ def beritaTerbaru():
     print('2')
     #temp = res.content
     print('3')
-    content = json.loads(res.content)
+    content = json.loads(res.content.decode('utf-8'))
     print('4')
     return content
 
