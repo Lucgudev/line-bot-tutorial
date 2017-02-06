@@ -295,6 +295,7 @@ def handle_message(event):
         content = beritaTerbaru()
     # print("event.reply_token:",event.reply_token)
     # print("event.message.text:", event.message.text)
+    print 'Haloo', content
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=content))
