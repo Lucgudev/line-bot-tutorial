@@ -88,7 +88,7 @@ def beritaTerbaru():
     print('3')
     content = json.loads(res.content.decode('utf-8'))
     print('4')
-    return content
+    return content.toString()
 
 
 def appleNews():
