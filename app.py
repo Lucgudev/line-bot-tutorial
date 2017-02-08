@@ -1,5 +1,6 @@
 import requests, json
 import re
+import aiml
 from bs4 import BeautifulSoup
 from collections import defaultdict
 from flask import Flask, request, abort
@@ -25,6 +26,16 @@ command = {
     "ngobrol":"ok",
     "berita":"ok"
 }
+
+
+kernel = aiml.Kernel()
+
+if os.path.isfile("bot_brain.brn"):
+    kernel.bootstrap(brainFile = "bot_brain.brn")
+else:
+    kernel.bootstrap(learnFiles = "std-startup.xml", commands = "load aiml b")
+    kernel.saveBrain("bot_brain.brn")
+
 
 
 @app.route("/callback", methods=['POST'])
@@ -74,15 +85,7 @@ def default_factory():
 def handle_message(event):
     # cmd = defaultdict(default_factory, command)
     reply_command = ''' Woy ngapain coba-coba gue. Nih aturannya
-     "eyny" : eyny 電影版 Mega 連結的網址。
-     "news" : apple news 即時新聞。
-     "beauty" : ptt 表特版 近期大於 10 推的文章 。
-     "ptthot" : ptt 近期熱門的文章。
-     "movie" :  近期上映的電影 ( 開眼電影網 )。
-     "technews" : 科技新聞。
-     "ngobrol" : Buat loe yang jomblo!,
-     "berita" : buat liat berita terbaru,
-     "panx" : 科技新聞 ( 泛科技 ) 。
+     Welcome to crutcrutbot
     '''
     content = reply_command
     if event.message.text == "movie":
@@ -91,6 +94,8 @@ def handle_message(event):
         content = ngobrol()
     if event.message.text == "berita":
         content = beritaTerbaru()
+    else:
+        content = kernel.respond(event.message.text)
     # print("event.reply_token:",event.reply_token)
     # print("event.message.text:", event.message.text)
     print (content)
