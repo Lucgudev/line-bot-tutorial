@@ -1,6 +1,7 @@
 import requests, json
 import re
 import aiml
+from Kernel import Kernel
 from bs4 import BeautifulSoup
 from collections import defaultdict
 from flask import Flask, request, abort
